@@ -24,3 +24,10 @@ class Sudoku:
                     columns[x],
                     blocks[x // 3][y // 3]
                 ))
+
+    def __str__(self):
+        s = ""
+        for i in range(81):
+            s += str(self.cells[i])
+            s += "\n" if (i + 1) % 9 == 0 else " "
+        return s
