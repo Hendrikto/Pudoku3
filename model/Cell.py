@@ -1,5 +1,7 @@
 # author: Hendrik Werner
 class Cell:
+    allowed = range(1, 10)
+
     def __init__(self, sudoku, row, column, block):
         self.value = 0
         self.sudoku = sudoku
@@ -9,7 +11,7 @@ class Cell:
         sudoku.empty.append(self)
 
     def set_value(self, new_value):
-        assert new_value in range(1, 10)
+        assert new_value in self.allowed
         self.clear()
         self.value = new_value
         self.row.remove(self.value)
