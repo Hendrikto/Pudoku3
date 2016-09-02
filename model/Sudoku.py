@@ -27,7 +27,6 @@ class Sudoku:
         self._parse(seed)
 
     def _parse(self, seed):
-        i = 1
         for i in range(min(len(seed), 81)):
             try:
                 self.cells[i].set_value(int(seed[i]))
