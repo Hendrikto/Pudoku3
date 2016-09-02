@@ -3,10 +3,9 @@ from model.Cell import Cell
 
 
 class Sudoku:
-    cells = []
-    empty = []
-
     def __init__(self):
+        self.cells = []
+        self.empty = []
         rows = []
         columns = []
         blocks = []

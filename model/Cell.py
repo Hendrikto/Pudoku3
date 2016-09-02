@@ -1,8 +1,7 @@
 # author: Hendrik Werner
 class Cell:
-    value = 0
-
     def __init__(self, sudoku, row, column, block):
+        self.value = 0
         self.sudoku = sudoku
         self.row = row
         self.column = column
