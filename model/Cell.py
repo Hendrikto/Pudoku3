@@ -23,3 +23,6 @@ class Cell:
             self.block.add(self.value)
             self.value = 0
             self.sudoku.empty.append(self)
+
+    def __str__(self):
+        return str(self.value)
