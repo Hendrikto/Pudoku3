@@ -6,6 +6,7 @@ class Cell:
         self.row = row
         self.column = column
         self.block = block
+        sudoku.empty.append(self)
 
     def set_value(self, new_value):
         assert new_value in range(1, 10)
@@ -13,6 +14,7 @@ class Cell:
         self.row.remove(self.value)
         self.column.remove(self.value)
         self.block.remove(self.value)
+        self.sudoku.empty.remove(self)
 
     def clear(self):
         if self.value:
@@ -20,3 +22,4 @@ class Cell:
             self.column.add(self.value)
             self.block.add(self.value)
             self.value = 0
+            self.sudoku.empty.append(self)
