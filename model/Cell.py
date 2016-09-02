@@ -24,5 +24,8 @@ class Cell:
             self.value = 0
             self.sudoku.empty.append(self)
 
+    def get_candidates(self):
+        return self.row & self.column & self.block
+
     def __str__(self):
         return str(self.value)
