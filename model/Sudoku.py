@@ -3,7 +3,7 @@ from model.Cell import Cell
 
 
 class Sudoku:
-    def __init__(self):
+    def __init__(self, seed=""):
         self.cells = []
         self.empty = []
         rows = []
@@ -24,6 +24,15 @@ class Sudoku:
                     columns[x],
                     blocks[x // 3][y // 3]
                 ))
+        self._parse(seed)
+
+    def _parse(self, seed):
+        i = 1
+        for i in range(min(len(seed), 81)):
+            try:
+                self.cells[i].set_value(int(seed[i]))
+            except ValueError:
+                pass
 
     def __str__(self):
         s = ""
