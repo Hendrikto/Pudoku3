@@ -14,9 +14,9 @@ class Cell:
         assert new_value in self.allowed
         self.clear()
         self.__value = new_value
-        self.__row.remove(self.__value)
-        self.__column.remove(self.__value)
-        self.__block.remove(self.__value)
+        self.__row.remove(new_value)
+        self.__column.remove(new_value)
+        self.__block.remove(new_value)
         self.__sudoku.empty.remove(self)
 
     def clear(self):
