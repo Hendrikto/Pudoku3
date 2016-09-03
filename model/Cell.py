@@ -31,4 +31,4 @@ class Cell:
         return self.__row & self.__column & self.__block
 
     def __str__(self):
-        return str(self.__value)
+        return str(self.__value) if self.__value else "."
