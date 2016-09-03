@@ -25,7 +25,7 @@ class Cell:
             self.__column.add(self.__value)
             self.__block.add(self.__value)
             self.__value = 0
-            self.__sudoku.empty.append(self)
+            self.__sudoku.empty.insert(0, self)
 
     def get_candidates(self):
         return self.__row & self.__column & self.__block
