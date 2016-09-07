@@ -1,6 +1,6 @@
 # author: Hendrik Werner
 from model import Area
-from model import PrettyStringifier
+from model import SimpleStringifier
 from model.Cell import Cell
 
 
@@ -8,7 +8,7 @@ class Sudoku:
     def __init__(self, seed="", stringifier=None):
         self.cells = []
         self.empty = []
-        self.stringifier = stringifier or PrettyStringifier()
+        self.stringifier = stringifier or SimpleStringifier()
         rows = []
         columns = []
         blocks = []
