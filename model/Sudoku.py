@@ -1,12 +1,14 @@
 # author: Hendrik Werner
 from model import Area
+from model import PrettyStringifier
 from model.Cell import Cell
 
 
 class Sudoku:
-    def __init__(self, seed=""):
+    def __init__(self, seed="", stringifier=None):
         self.cells = []
         self.empty = []
+        self.stringifier = stringifier or PrettyStringifier()
         rows = []
         columns = []
         blocks = []
@@ -35,8 +37,4 @@ class Sudoku:
                 pass
 
     def __str__(self):
-        s = ""
-        for i in range(81):
-            s += str(self.cells[i])
-            s += "\n" if (i + 1) % 9 == 0 else " "
-        return s
+        return self.stringifier.stringify(self)
