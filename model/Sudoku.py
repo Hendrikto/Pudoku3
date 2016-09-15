@@ -9,16 +9,9 @@ class Sudoku:
         self.cells = []
         self.empty = []
         self.stringifier = stringifier or SimpleStringifier()
-        rows = []
-        columns = []
-        blocks = []
-        for i in range(9):
-            rows.append(Area())
-            columns.append(Area())
-        for x in range(3):
-            blocks.append([])
-            for y in range(3):
-                blocks[x].append(Area())
+        rows = [Area() for _ in range(9)]
+        columns = [Area() for _ in range(9)]
+        blocks = [[Area() for _ in range(3)] for _ in range(3)]
         for x in range(9):
             for y in range(9):
                 self.cells.append(Cell(
