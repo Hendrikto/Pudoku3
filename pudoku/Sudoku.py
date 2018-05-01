@@ -5,10 +5,10 @@ from .SimpleStringifier import SimpleStringifier
 
 
 class Sudoku:
-    def __init__(self, seed="", stringifier=None):
+    def __init__(self, seed="", stringifier=SimpleStringifier()):
         self.cells = []
         self.empty = []
-        self.stringifier = stringifier or SimpleStringifier()
+        self.stringifier = stringifier
         rows = [Area() for _ in range(9)]
         columns = [Area() for _ in range(9)]
         blocks = [[Area() for _ in range(3)] for _ in range(3)]
