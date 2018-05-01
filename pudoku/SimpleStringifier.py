@@ -1,5 +1,5 @@
 # author: Hendrik Werner
-from model.SudokuStringifier import SudokuStringifier
+from .SudokuStringifier import SudokuStringifier
 
 
 class SimpleStringifier(SudokuStringifier):
