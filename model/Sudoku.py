@@ -1,7 +1,7 @@
 # author: Hendrik Werner
-from model import Area
-from model import SimpleStringifier
+from model.Area import Area
 from model.Cell import Cell
+from model.SimpleStringifier import SimpleStringifier
 
 
 class Sudoku:
