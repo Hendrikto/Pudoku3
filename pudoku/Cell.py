@@ -1,6 +1,6 @@
 # author: Hendrik Werner
 class Cell:
-    allowed = range(1, 10)
+    allowed = range(0, 10)
 
     def __init__(self, sudoku, row, column, block):
         self.__value = 0
@@ -13,6 +13,7 @@ class Cell:
     def set_value(self, new_value):
         assert new_value in self.allowed
         self.clear()
+        if new_value == 0: return
         self.__value = new_value
         self.__row.remove(new_value)
         self.__column.remove(new_value)
